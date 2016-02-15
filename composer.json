@@ -1,0 +1,45 @@
+{
+    "name": "jdr/mailer",
+    "type": "library",
+    "description": "Build and send emails.",
+    "keywords": [
+        "jdr",
+        "mailer"
+    ],
+    "homepage": "https://github.com/johanderuijter/mailer",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Johan de Ruijter",
+            "email": "dev@johanderuijter.nl",
+            "homepage": "http://johanderuijter.nl",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php" : "~7.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit" : "~5.0",
+        "scrutinizer/ocular": "~1.1",
+        "squizlabs/php_codesniffer": "~2.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "JDR\\Mailer\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "JDR\\Mailer\\Test\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "phpunit"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    }
+}
