@@ -7,7 +7,7 @@ interface Mailer
     /**
      * Send email.
      *
-     * @param EmailType $email
+     * @param EmailType $type
      */
     public function sendEmail(EmailType $type);
 }
