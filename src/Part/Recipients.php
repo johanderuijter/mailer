@@ -2,6 +2,7 @@
 
 namespace JDR\Mailer\Part;
 
+use InvalidArgumentException;
 use JDR\Mailer\Email\Address;
 
 class Recipients implements EmailPart
@@ -18,6 +19,10 @@ class Recipients implements EmailPart
      */
     public function __construct(Address ...$addresses)
     {
+        if (empty($addresses)) {
+            throw new InvalidArgumentException('At least one address must be supplied');
+        }
+
         $this->addresses = $addresses;
     }
 

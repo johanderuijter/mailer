@@ -3,7 +3,7 @@
 namespace JDR\Mailer\Part;
 
 use JDR\Mailer\Email\Email;
-use JDR\Mailer\Email\Message;
+use JDR\Mailer\Email\Message as EmailMessage;
 use JDR\Mailer\Template\Engine;
 
 class TemplateResolver implements EmailPartResolver
@@ -30,7 +30,7 @@ class TemplateResolver implements EmailPartResolver
     {
         $body = $this->render($part);
         $contentType = $part->getContentType();
-        $email->addMessage(new Message($contentType, $body));
+        $email->addMessage(new EmailMessage($contentType, $body));
     }
 
     /**

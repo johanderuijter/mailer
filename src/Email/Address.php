@@ -33,9 +33,9 @@ class Address
     /**
      * Get display name.
      *
-     * @return string
+     * @return string|null
      */
-    public function getName(): string
+    public function getName()
     {
         return $this->name;
     }
