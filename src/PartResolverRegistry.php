@@ -11,7 +11,7 @@ class PartResolverRegistry
     /**
      * @var EmailPartResolver[]
      */
-    private $resolvers;
+    private $resolvers = [];
 
     /**
      * Add Resolver.
@@ -40,8 +40,8 @@ class PartResolverRegistry
         $identifier = get_class($part);
 
         if (!array_key_exists($identifier, $this->resolvers)) {
-            throw InvalidArgumentException(sprintf(
-                'Resolver for the part %s does not exists. Please choose one of the following: $s',
+            throw new InvalidArgumentException(sprintf(
+                'Resolver for the part "%s" does not exists. Please choose one of the following: %s',
                 $identifier,
                 implode(', ', array_keys($this->resolvers))
             ));
