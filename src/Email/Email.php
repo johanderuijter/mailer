@@ -5,18 +5,18 @@ namespace JDR\Mailer\Email;
 interface Email
 {
     /**
-     * Set the sender of this message.
+     * Set the From addresses.
      *
-     * @param Address $address
+     * @param Address[] $addresses
      */
-    public function setSender(Address $address): Email;
+    public function setFrom(array $addresses): Email;
 
     /**
-     * Get the sender address for this message.
+     * Get the From addresses for this message.
      *
-     * @return Address
+     * @return Address[]
      */
-    public function getSender(): Address;
+    public function getFrom(): array;
 
     /**
      * Set the Reply-To addresses.
@@ -81,6 +81,34 @@ interface Email
      * @return Address[]
      */
     public function getBcc(): array;
+
+    /**
+     * Set the sender of this message.
+     *
+     * @param Address $address
+     */
+    public function setSender(Address $address): Email;
+
+    /**
+     * Get the sender address for this message.
+     *
+     * @return Address|null
+     */
+    public function getSender();
+
+    /**
+     * Set the bounce address for this message.
+     *
+     * @param Address $address
+     */
+    public function setBounce(Address $address): Email;
+
+    /**
+     * Get the bounce address for this message.
+     *
+     * @return Address|null
+     */
+    public function getBounce();
 
     /**
      * Set the subject of the message.
