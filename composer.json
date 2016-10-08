@@ -24,6 +24,9 @@
         "scrutinizer/ocular": "~1.1",
         "squizlabs/php_codesniffer": "~2.3"
     },
+    "suggest": {
+        "jdr/mailer-swift-mailer-bridge": "Send emails using swiftmailer"
+    },
     "autoload": {
         "psr-4": {
             "JDR\\Mailer\\": "src"
