@@ -55,6 +55,8 @@ class EmailBuilder
             $resolver->addPart($email, $part);
         }
 
+        $this->parts = [];
+
         return $email;
     }
 }
